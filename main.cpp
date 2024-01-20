@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) horn
+            4) airbag
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) honk horn
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) wiper control
+            2) blinker control
+            3) wiper fluid control
+            4) brights control
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on wipers
+            2) turn on blinker left
+            3) spray wiper fluid
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air vents
+            2) air filter
+            3) air heater 
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) blow air
+            2) clean air
+            3) cool air
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) stereo power button
+            2) volume control
+            3) source control
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on stereo
+            2) turn volume up
+            3) change source
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) seat heater
+            2) recline lever
+            3) headrest
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) recline
+            2) turn heater on
 */
 
 /*
