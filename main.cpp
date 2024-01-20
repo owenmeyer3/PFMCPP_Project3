@@ -196,53 +196,53 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
+Thing 1) iPhone
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) operating system
+    2) screen size
+    3) speaker type
+    4) camera type
+    5) battery life
 3 things it can do:
-    1)
-    2)
-    3)
+    1) browse the web
+    2) play music
+    3) make phone call
 
-Thing 2)
+Thing 2) Diner
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) number of employees
+    2) food supplier
+    3) hours of operation
+    4) number of tables
+    5) star rating
 3 things it can do:
-    1)
-    2)
-    3)
+    1) cook eggs
+    2) serve food
+    3) take orders
 
-Thing 3)
+Thing 3) Guitar Amp
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Volume control
+    2) FX Type
+    3) gain control
+    4) cabinet size
+    5) input voltage
 3 things it can do:
-    1)
-    2)
-    3)
+    1) change volume
+    2) process input
+    3) adjust gain
 
-Thing 4)
+Thing 4) Bank
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) total cash
+    2) number of atms
+    3) number of tellers
+    4) internal air temperature
+    5) front door height
 3 things it can do:
-    1)
-    2)
-    3)
+    1) recieve cash
+    2) pay teller
+    3) hire manager
 */
 
 /*
