@@ -510,7 +510,7 @@ Thing 8) Restroom
     2) illuminate room
     3) move load to tank
 
-Thing 9) engine
+Thing 9) Engine
 5 properties:
     1) number of cylinders
     2) type of fuel
@@ -546,6 +546,41 @@ example:
         Brightness (double)
         width in cm (int)
         height in cm (int)
+
+Wing:
+    length (float)
+    ice melt fluid type (std::string)
+    number of ribs (int)
+    color (std::string)
+    number of flaps (int)
+
+Cockpit:
+    number of pilots (int)
+    number of switches (int)
+    radar type (std::string)
+    winshield tint level (float)
+    winshield height (float)
+
+Cabin:
+    number of passengers (int)
+    number of seats (int)
+    snack type (std::string)
+    ginger ale type (std::string)
+    legroom depth (float)
+
+Restroom:
+    room height (float)
+    sink depth (float)
+    flush volume in decibels (float)
+    number of plies in toilet paper (int)
+    soap brand (std::string)
+
+Engine:
+    number of cylinders (int)
+    type of fuel (std::string)
+    chamber pressure (float)
+    maximum temperature (float)
+    material (std::string)
 */
 
 /*
