@@ -318,6 +318,34 @@ example:
         Brightness (double)
         area in cm2 (int)
         brand (std::string)
+
+iPhone:
+    operating system (std::string)
+    screen size (int)
+    speaker type (std::string)
+    camera type (std::string)
+    battery life (float)
+
+Diner:
+    number of employees (int)
+    food supplier (std::string)
+    hours of operation (std::string)
+    number of tables (int)
+    star rating (float)
+
+Guitar Amp:
+    Volume control (float)
+    FX Type (std::string)
+    gain control (float)
+    cabinet size (int)
+    input voltage (float)
+
+Bank:
+    total cash (float)
+    number of atms (int)
+    number of tellers (int)
+    internal air temperature (float)
+    front door height (float)
 */
 
 /*
