@@ -195,54 +195,6 @@ Part 1b - Step 2: Assignment
         primitives.
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
-
-Thing 1) iPhone
-5 properties:
-    1) operating system
-    2) screen size
-    3) speaker type
-    4) camera type
-    5) battery life
-3 things it can do:
-    1) browse the web
-    2) play music
-    3) make phone call
-
-Thing 2) Diner
-5 properties:
-    1) number of employees
-    2) food supplier
-    3) hours of operation
-    4) number of tables
-    5) star rating
-3 things it can do:
-    1) cook eggs
-    2) serve food
-    3) take orders
-
-Thing 3) Guitar Amp
-5 properties:
-    1) Volume control
-    2) FX Type
-    3) gain control
-    4) cabinet size
-    5) input voltage
-3 things it can do:
-    1) change volume
-    2) process input
-    3) adjust gain
-
-Thing 4) Bank
-5 properties:
-    1) total cash
-    2) number of atms
-    3) number of tellers
-    4) internal air temperature
-    5) front door height
-3 things it can do:
-    1) recieve cash
-    2) pay teller
-    3) hire manager
 */
 
 /*
@@ -252,11 +204,13 @@ Part 1b - Step 3: Commit
 Now that you've made changes to the code, make a commit!
 Be sure to make the commit message meaningful.
 */
+
 /*
 *********************************************************************************
 ************************************ PART 1C ************************************
 *********************************************************************************
 */
+
  /*
 =================
 Part 1c - Step 1: Lesson
@@ -364,19 +318,7 @@ Part 1c - Step 4: Assignment
 Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
-
-Thing 10) Airplane
-5 properties:
-    1) Wing
-    2) Cockpit
-    3) Cabin
-    4) Restroom
-    5) Engine
-3 things it can do:
-    1) takeoff
-    2) turn
-    3) ping radar
- */
+*/
 
  /*
 =================
@@ -384,13 +326,14 @@ Part 1c - Step 5: Commit
 =================
 Now that you've made changes to the code, make a commit!
 Be sure to make the commit message meaningful.
- */
+*/
 
 /*
 *********************************************************************************
 ************************************ PART 1D ************************************
 *********************************************************************************
 */
+
 /*
 =================
 Part 1d - Step 1: Lesson
@@ -461,67 +404,7 @@ example:
     If #10's first property was 'Engine', then `Thing 5)` will be `Engine`. 
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
-
-Thing 5) Wing
-5 properties:
-    1) length
-    2) ice melt fluid type
-    3) number of ribs
-    4) color
-    5) number of flaps
-3 things it can do:
-    1) incline flap
-    2) melt ice
-    3) flash light
-
-Thing 6) Cockpit
-5 properties:
-    1) number of pilots
-    2) number of switches
-    3) radar type
-    4) winshield tint level
-    5) winshield height
-3 things it can do:
-    1) turn plane
-    2) send message to airport
-    3) send PA message to cabin
-
-Thing 7) Cabin
-5 properties:
-    1) number of passengers
-    2) number of seats
-    3) snack type
-    4) ginger ale type
-    5) legroom depth
-3 things it can do:
-    1) dim lights
-    2) serve coffee
-    3) play music
-
-Thing 8) Restroom
-5 properties:
-    1) room height
-    2) sink depth
-    3) flush volume in decibels
-    4) number of plies in toilet paper
-    5) soap brand
-3 things it can do:
-    1) flow sink water
-    2) illuminate room
-    3) move load to tank
-
-Thing 9) Engine
-5 properties:
-    1) number of cylinders
-    2) type of fuel
-    3) chamber pressure
-    4) maximum temperature
-    5) material
-3 things it can do:
-    1) suck in fuel
-    2) combust fuel
-    3) spin axle
- */
+*/
 
 /*
 =================
@@ -606,14 +489,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I do not want to see 2 copies of your Plain-English UDTs.  
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
+
+Thing 1) iPhone
+5 properties:
+    1) operating system
+    2) screen size
+    3) speaker type
+    4) camera type
+    5) battery life
+3 things it can do:
+    1) browse the web
+    2) play music
+    3) make phone call
+
+Thing 2) Diner
+5 properties:
+    1) number of employees
+    2) food supplier
+    3) hours of operation
+    4) number of tables
+    5) star rating
+3 things it can do:
+    1) cook eggs
+    2) serve food
+    3) take orders
+
+Thing 3) Guitar Amp
+5 properties:
+    1) Volume control
+    2) FX Type
+    3) gain control
+    4) cabinet size
+    5) input voltage
+3 things it can do:
+    1) change volume
+    2) process input
+    3) adjust gain
+
+Thing 4) Bank
+5 properties:
+    1) total cash
+    2) number of atms
+    3) number of tellers
+    4) internal air temperature
+    5) front door height
+3 things it can do:
+    1) recieve cash
+    2) pay teller
+    3) hire manager
+
+Thing 5) Wing
+5 properties:
+    1) length
+    2) ice melt fluid type
+    3) number of ribs
+    4) color
+    5) number of flaps
+3 things it can do:
+    1) incline flap
+    2) melt ice
+    3) flash light
+
+Thing 6) Cockpit
+5 properties:
+    1) number of pilots
+    2) number of switches
+    3) radar type
+    4) winshield tint level
+    5) winshield height
+3 things it can do:
+    1) turn plane
+    2) send message to airport
+    3) send PA message to cabin
+
+Thing 7) Cabin
+5 properties:
+    1) number of passengers
+    2) number of seats
+    3) snack type
+    4) ginger ale type
+    5) legroom depth
+3 things it can do:
+    1) dim lights
+    2) serve coffee
+    3) play music
+
+Thing 8) Restroom
+5 properties:
+    1) room height
+    2) sink depth
+    3) flush volume in decibels
+    4) number of plies in toilet paper
+    5) soap brand
+3 things it can do:
+    1) flow sink water
+    2) illuminate room
+    3) move load to tank
+
+Thing 9) Engine
+5 properties:
+    1) number of cylinders
+    2) type of fuel
+    3) chamber pressure
+    4) maximum temperature
+    5) material
+3 things it can do:
+    1) suck in fuel
+    2) combust fuel
+    3) spin axle
+
+Thing 10) Airplane
+5 properties:
+    1) Wing
+    2) Cockpit
+    3) Cabin
+    4) Restroom
+    5) Engine
+3 things it can do:
+    1) takeoff
+    2) turn
+    3) ping radar
 */
-
-
-
-
-
-
-
 
 /*
 =================
