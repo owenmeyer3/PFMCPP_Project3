@@ -501,7 +501,13 @@ Thing 1) iPhone
     1) browse the web
     2) play music
     3) make phone call
+*/
+struct Iphone
+{
 
+};
+
+/*
 Thing 2) Diner
 5 properties:
     1) number of employees (int)
@@ -513,7 +519,13 @@ Thing 2) Diner
     1) cook eggs
     2) serve food
     3) take orders
+*/
+struct Diner
+{
 
+};
+
+/*
 Thing 3) Guitar Amp
 5 properties:
     1) Volume control (float)
@@ -525,7 +537,13 @@ Thing 3) Guitar Amp
     1) change volume
     2) process input
     3) adjust gain
+*/
+struct GuitarAmp
+{
 
+};
+
+/*
 Thing 4) Bank
 5 properties:
     1) total cash (float)
@@ -537,7 +555,13 @@ Thing 4) Bank
     1) recieve cash
     2) pay teller
     3) hire manager
+*/
+struct Bank
+{
 
+};
+
+/*
 Thing 5) Wing
 5 properties:
     1) length (float)
@@ -549,7 +573,13 @@ Thing 5) Wing
     1) incline flap
     2) melt ice
     3) flash light
+*/
+struct Wing
+{
 
+};
+
+/*
 Thing 6) Cockpit
 5 properties:
     1) number of pilots (int)
@@ -561,7 +591,13 @@ Thing 6) Cockpit
     1) turn plane
     2) send message to airport
     3) send PA message to cabin
+*/
+struct Cockpit
+{
 
+};
+
+/*
 Thing 7) Cabin
 5 properties:
     1) number of passengers (int)
@@ -573,7 +609,13 @@ Thing 7) Cabin
     1) dim lights
     2) serve coffee
     3) play music
+*/
+struct Cabin
+{
 
+};
+
+/*
 Thing 8) Restroom
 5 properties:
     1) room height (float)
@@ -585,7 +627,13 @@ Thing 8) Restroom
     1) flow sink water
     2) illuminate room
     3) move load to tank
+*/
+struct Restroom
+{
 
+};
+
+/*
 Thing 9) Engine
 5 properties:
     1) number of cylinders (int)
@@ -597,7 +645,13 @@ Thing 9) Engine
     1) suck in fuel
     2) combust fuel
     3) spin axle
+*/
+struct Engine
+{
 
+};
+
+/*
 Thing 10) Airplane
 5 properties:
     1) wing (Wing)
@@ -610,6 +664,10 @@ Thing 10) Airplane
     2) turn
     3) ping radar
 */
+struct Airplane
+{
+
+};
 
 /*
 =================
