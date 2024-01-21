@@ -506,10 +506,15 @@ struct Iphone
 {
 // 5 properties:
 //     1) operating system (std::string)
+    std::string operatingSystem;
 //     2) screen size (float)
+    float screenSize;
 //     3) speaker type (std::string)
+    std::string speakerType;
 //     4) camera type (std::string)
+    std::string cameraType;
 //     5) battery life (float)
+    float batteryLife;
 // 3 things it can do:
 //     1) browse the web
 //     2) play music
@@ -533,10 +538,15 @@ struct Diner
 {
 // 5 properties:
 //     1) number of employees (int)
+int numberOfEmployees;
 //     2) food supplier (std::string)
+std::string foodSupplier;
 //     3) hours of operation (std::string)
+std::string hoursOfOperation;
 //     4) number of tables (int)
+int numberOfTables;
 //     5) star rating (float)
+float starRating;
 // 3 things it can do:
 //     1) cook eggs
 //     2) serve food
@@ -561,10 +571,15 @@ struct GuitarAmp
 // Thing 3) Guitar Amp
 // 5 properties:
 //     1) Volume control (float)
+float volumeControl;
 //     2) FX Type (std::string)
+std::string fxType;
 //     3) gain control (float)
+float gainControl;
 //     4) cabinet size (float)
+float cabinetSize;
 //     5) input voltage (float)
+float inputVoltage;
 // 3 things it can do:
 //     1) change volume
 //     2) process input
@@ -588,10 +603,15 @@ struct Bank
 {
 // 5 properties:
 //     1) total cash (float)
+float totalCash;
 //     2) number of atms (int)
+int numberOfAtms;
 //     3) number of tellers (int)
+int numberOfTellers;
 //     4) internal air temperature (float)
+float internalAirTemperature;
 //     5) front door height (float)
+float frontDoorHeight;
 // 3 things it can do:
 //     1) recieve cash
 //     2) pay teller
@@ -615,10 +635,15 @@ struct Wing
 {
 // 5 properties:
 //     1) length (float)
+float length;
 //     2) ice melt fluid type (std::string)
+std::string iceMeltFluidType;
 //     3) number of ribs (int)
+int numberOfRibs;
 //     4) color (std::string)
+std::string color;
 //     5) number of flaps (int)
+int numberOfFlaps;
 // 3 things it can do:
 //     1) incline flap
 //     2) melt ice
@@ -642,10 +667,15 @@ struct Cockpit
 {
 // 5 properties:
 //     1) number of pilots (int)
+int numberOfPilots;
 //     2) number of switches (int)
+int numberOfSwitches;
 //     3) radar type (std::string)
+std::string radarType;
 //     4) winshield tint level (float)
+float winshieldTintLevel;
 //     5) winshield height (float)
+float winshieldHeight;
 // 3 things it can do:
 //     1) turn plane
 //     2) send message to airport
@@ -669,10 +699,15 @@ struct Cabin
 {
 // 5 properties:
 //     1) number of passengers (int)
+int numberOfPassengers;
 //     2) number of seats (int)
+int numberOfSeats;
 //     3) snack type (std::string)
+std::string  snackType;
 //     4) ginger ale type (std::string)
+std::string gingerAletype;
 //     5) legroom depth (float)
+float legroomDepth;
 // 3 things it can do:
 //     1) dim lights
 //     2) serve coffee
@@ -696,10 +731,15 @@ struct Restroom
 {
 // 5 properties:
 //     1) room height (float)
+float roomHeight;
 //     2) sink depth (float)
+float sinkDepth;
 //     3) flush volume in decibels (float)
+float flushVolumeInDecibels;
 //     4) number of plies in toilet paper (int)
+int numberOfPliesInToiletPaper;
 //     5) soap brand (std::string)
+std::string soapBrand;
 // 3 things it can do:
 //     1) flow sink water
 //     2) illuminate room
@@ -723,10 +763,15 @@ struct Engine
 {
 // 5 properties:
 //     1) number of cylinders (int)
+int numberOfCylinders;
 //     2) type of fuel (std::string)
+std::string typeOfFuel;
 //     3) chamber pressure (float)
+float chamberPressure;
 //     4) maximum temperature (float)
+float maximumTemperature;
 //     5) material (std::string)
+std::string material;
 // 3 things it can do:
 //     1) suck in fuel
 //     2) combust fuel
@@ -750,10 +795,15 @@ struct Airplane
 {
 // 5 properties:
 //     1) wing (Wing)
+Wing wing;
 //     2) cockpit (Cockpit)
+Cockpit cockpit;
 //     3) cabin (Cabin)
+Cabin cabin;
 //     4) restroom (Restroom)
+Restroom restroom;
 //     5) engine (Engine)
+Engine engine;
 // 3 things it can do:
 //     1) takeoff
 //     2) turn
