@@ -517,8 +517,11 @@ struct Iphone
     float batteryLife;
 // 3 things it can do:
 //     1) browse the web
+void browseTheWeb(std::string url);
 //     2) play music
+void playMusic(std::string songName);
 //     3) make phone call
+void makePhoneCall(int number);
 };
 
 /*
@@ -549,8 +552,11 @@ int numberOfTables;
 float starRating;
 // 3 things it can do:
 //     1) cook eggs
+void cookEggs();
 //     2) serve food
+void serveFood(int tableNumber);
 //     3) take orders
+str::string takeOrders(); //return orders
 };
 
 /*
@@ -582,8 +588,11 @@ float cabinetSize;
 float inputVoltage;
 // 3 things it can do:
 //     1) change volume
+void changeVolume(float newVolume);
 //     2) process input
+void processInput();
 //     3) adjust gain
+void adjustGain(float newGain);
 };
 
 /*
@@ -614,8 +623,11 @@ float internalAirTemperature;
 float frontDoorHeight;
 // 3 things it can do:
 //     1) recieve cash
+int receieveCash(float amount); //return deposit id
 //     2) pay teller
+void payTeller(float amount);
 //     3) hire manager
+void hireManager(std::string name);
 };
 
 /*
@@ -646,8 +658,11 @@ std::string color;
 int numberOfFlaps;
 // 3 things it can do:
 //     1) incline flap
+void inclineFlap();
 //     2) melt ice
+void meltIce();
 //     3) flash light
+void flashLight(std::string color);
 };
 
 /*
@@ -678,8 +693,11 @@ float winshieldTintLevel;
 float winshieldHeight;
 // 3 things it can do:
 //     1) turn plane
+void turnPlane();
 //     2) send message to airport
+bool sendMessageToAirport(std::string message); //return success (true) or failure (false)
 //     3) send PA message to cabin
+void sendPaMessageToCabin(std::string message);
 };
 
 /*
@@ -710,8 +728,11 @@ std::string gingerAletype;
 float legroomDepth;
 // 3 things it can do:
 //     1) dim lights
+void dimLights(float newLevel);
 //     2) serve coffee
+float serveCoffee(); //return tip amount
 //     3) play music
+void playMusic();
 };
 
 /*
@@ -742,8 +763,11 @@ int numberOfPliesInToiletPaper;
 std::string soapBrand;
 // 3 things it can do:
 //     1) flow sink water
+void flowSinkWater();
 //     2) illuminate room
+void illuminateRoom(float newLevel);
 //     3) move load to tank
+float moveLoadToTank();//return tank level
 };
 
 /*
@@ -774,8 +798,11 @@ float maximumTemperature;
 std::string material;
 // 3 things it can do:
 //     1) suck in fuel
+void suckInFuel();
 //     2) combust fuel
+void combustFuel();
 //     3) spin axle
+float spinAxle(); //return axle rpm
 };
 
 /*
@@ -806,8 +833,11 @@ Restroom restroom;
 Engine engine;
 // 3 things it can do:
 //     1) takeoff
+void takeoff();
 //     2) turn
+void turn(float angle);
 //     3) ping radar
+float pingRadar();//return distance from object
 };
 
 /*
