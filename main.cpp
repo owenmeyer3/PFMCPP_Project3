@@ -964,15 +964,15 @@ struct Iphone
 {
     // 5 properties:
     //     1) operating system (std::string)
-        std::string operatingSystem="iOS";
+        std::string operatingSystem = "iOS";
     //     2) screen size (float)
-        float screenSize=8.0f;
+        float screenSize = 8.0f;
     //     3) speaker type (std::string)
-        std::string speakerType="Bose";
+        std::string speakerType = "Bose";
     //     4) camera type (std::string)
-        std::string cameraType="Nikon";
+        std::string cameraType = "Nikon";
     //     5) battery life (float)
-        float batteryLife=100.0f;
+        float batteryLife = 100.0f;
     
     // 3 things it can do:
     //     1) browse the web
@@ -1000,28 +1000,29 @@ struct Diner
 {
     // 5 properties:
     //     1) number of employees (int)
-    int numberOfEmployees=5;
+    int numberOfEmployees = 5;
     //     2) food supplier (std::string)
-    std::string foodSupplier="Sysco";
+    std::string foodSupplier = "Sysco";
     //     3) hours of operation (std::string)
-    std::string hoursOfOperation="8-5";
+    std::string hoursOfOperation = "8-5";
     //     4) number of tables (int)
-    int numberOfTables=10;
+    int numberOfTables = 10;
     //     5) star rating (float)
-    float starRating=5;
+    float starRating = 5;
     
-    struct Kitchen{
+    struct Kitchen
+    {
         // 5 properties:
         //     1) number of chefs (int)
-        int numberOfChefs=5;
+        int numberOfChefs = 5;
         //     2) grill brand (std::string)
-        std::string grillBrand="Weber";
+        std::string grillBrand = "Weber";
         //     3) tileType (std::string)
-        std::string tileType="Marble";
+        std::string tileType = "Marble";
         //     4) number of blenders (int)
-        int numberOfBlenders=10;
+        int numberOfBlenders = 10;
         //     5) temperature (float)
-        float temperature=100.0f;
+        float temperature = 100.0f;
         
         // 3 things it can do:
         //     1) run ood disposal
@@ -1061,15 +1062,15 @@ struct GuitarAmp
     // Thing 3) Guitar Amp
     // 5 properties:
     //     1) Volume control (float)
-    float volumeControl=50.0f;
+    float volumeControl = 50.0f;
     //     2) FX Type (std::string)
-    std::string fxType="Reverb";
+    std::string fxType = "Reverb";
     //     3) gain control (float)
-    float gainControl=50.0f;
+    float gainControl = 50.0f;
     //     4) cabinet size (float)
-    float cabinetSize=18.0f;
+    float cabinetSize = 18.0f;
     //     5) input voltage (float)
-    float inputVoltage=12.0f;
+    float inputVoltage = 12.0f;
     
     // 3 things it can do:
     //     1) change volume
@@ -1097,15 +1098,15 @@ struct Bank
 {
     // 5 properties:
     //     1) total cash (float)
-    float totalCash=1000000.0f;
+    float totalCash = 1000000.0f;
     //     2) number of atms (int)
-    int numberOfAtms=3;
+    int numberOfAtms = 3;
     //     3) number of tellers (int)
-    int numberOfTellers=3;
+    int numberOfTellers = 3;
     //     4) internal air temperature (float)
-    float internalAirTemperature=70.0f;
+    float internalAirTemperature = 70.0f;
     //     5) front door height (float)
-    float frontDoorHeight=100.0f;
+    float frontDoorHeight = 100.0f;
     
     // 3 things it can do:
     //     1) recieve cash
@@ -1133,15 +1134,15 @@ struct Wing
 {
     // 5 properties:
     //     1) length (float)
-    float length=20.0f;
+    float length = 20.0f;
     //     2) ice melt fluid type (std::string)
-    std::string iceMeltFluidType="Dr. Lava";
+    std::string iceMeltFluidType = "Dr. Lava";
     //     3) number of ribs (int)
-    int numberOfRibs=10;
+    int numberOfRibs = 10;
     //     4) color (std::string)
-    std::string color="Greenish Red";
+    std::string color = "Greenish Red";
     //     5) number of flaps (int)
-    int numberOfFlaps=3;
+    int numberOfFlaps = 3;
     
     // 3 things it can do:
     //     1) incline flap
@@ -1169,15 +1170,15 @@ struct Cockpit
 {
     // 5 properties:
     //     1) number of pilots (int)
-    int numberOfPilots=3;
+    int numberOfPilots = 3;
     //     2) number of switches (int)
-    int numberOfSwitches=1400;
+    int numberOfSwitches = 1400;
     //     3) radar type (std::string)
-    std::string radarType="Expensive and Fancy";
+    std::string radarType = "Expensive and Fancy";
     //     4) winshield tint level (float)
-    float winshieldTintLevel=100.0f;
+    float winshieldTintLevel = 100.0f;
     //     5) winshield height (float)
-    float winshieldHeight=18.0f;
+    float winshieldHeight = 18.0f;
     
     // 3 things it can do:
     //     1) turn plane
@@ -1205,27 +1206,29 @@ struct Cabin
 {
     // 5 properties:
     //     1) number of passengers (int)
-    int numberOfPassengers=50;
+    int numberOfPassengers = 50;
     //     2) number of seats (int)
-    int numberOfSeats=49;
+    int numberOfSeats = 49;
     //     3) snack type (std::string)
-    std::string snackType="Bugles";
+    std::string snackType = "Bugles";
     //     4) ginger ale type (std::string)
-    std::string gingerAletype="Canada Dry";
+    std::string gingerAletype = "Canada Dry";
     //     5) legroom depth (float)
-    float legroomDepth=0.0f;
+    float legroomDepth = 0.0f;
     
-    struct FlightAttendant{
+    struct FlightAttendant
+    {
         // 5 properties:
         //     1) number of eyeballs (int)
-        int numberOfEyeballs=1;
+        int numberOfEyeballs = 1;
         //     2) number of elbows (int)
-        int numberOfElbows=2;
+        int numberOfElbows = 2;
         //     3) deoderant brand (std::string)
-        std::string deoderantBrand="Mitchum";
+        std::string deoderantBrand = "Mitchum";
         //     4) favorite dance type (std::string)
-        std::string favoriteDanceType="Disco";
-        //     5) legroom depth (float)
+        std::string favoriteDanceType = "Disco";
+        //     5) ear size (float)
+        float earSize = 0.0f;
         
         // 3 things it can do:
         //     1) dance
@@ -1266,15 +1269,15 @@ struct Restroom
 {
     // 5 properties:
     //     1) room height (float)
-    float roomHeight=120.0f;
+    float roomHeight = 120.0f;
     //     2) sink depth (float)
-    float sinkDepth=0.1f;
+    float sinkDepth = 0.1f;
     //     3) flush volume in decibels (float)
-    float flushVolumeInDecibels=150.0f;
+    float flushVolumeInDecibels = 150.0f;
     //     4) number of plies in toilet paper (int)
-    int numberOfPliesInToiletPaper=1;
+    int numberOfPliesInToiletPaper = 1;
     //     5) soap brand (std::string)
-    std::string soapBrand="Sergeant Scrub";
+    std::string soapBrand = "Sergeant Scrub";
     
     // 3 things it can do:
     //     1) flow sink water
@@ -1302,15 +1305,15 @@ struct Engine
 {
     // 5 properties:
     //     1) number of cylinders (int)
-    int numberOfCylinders=6;
+    int numberOfCylinders = 6;
     //     2) type of fuel (std::string)
-    std::string typeOfFuel="Jet Fuel";
+    std::string typeOfFuel = "Jet Fuel";
     //     3) chamber pressure (float)
-    float chamberPressure=14.7f;
+    float chamberPressure = 14.7f;
     //     4) maximum temperature (float)
-    float maximumTemperature=451.0f;
+    float maximumTemperature = 451.0f;
     //     5) material (std::string)
-    std::string material="Gold";
+    std::string material = "Gold";
     
     // 3 things it can do:
     //     1) suck in fuel
