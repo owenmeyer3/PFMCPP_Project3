@@ -492,11 +492,11 @@ MOVE THEM to the space below this block comment and put them in numerical order
 
 Thing 1) iPhone
 5 properties:
-    1) operating system
-    2) screen size
-    3) speaker type
-    4) camera type
-    5) battery life
+    1) operating system (std::string)
+    2) screen size (float)
+    3) speaker type (std::string)
+    4) camera type (std::string)
+    5) battery life (float)
 3 things it can do:
     1) browse the web
     2) play music
@@ -504,11 +504,11 @@ Thing 1) iPhone
 
 Thing 2) Diner
 5 properties:
-    1) number of employees
-    2) food supplier
-    3) hours of operation
-    4) number of tables
-    5) star rating
+    1) number of employees (int)
+    2) food supplier (std::string)
+    3) hours of operation (std::string)
+    4) number of tables (int)
+    5) star rating (float)
 3 things it can do:
     1) cook eggs
     2) serve food
@@ -516,11 +516,11 @@ Thing 2) Diner
 
 Thing 3) Guitar Amp
 5 properties:
-    1) Volume control
-    2) FX Type
-    3) gain control
-    4) cabinet size
-    5) input voltage
+    1) Volume control (float)
+    2) FX Type (std::string)
+    3) gain control (float)
+    4) cabinet size (float)
+    5) input voltage (float)
 3 things it can do:
     1) change volume
     2) process input
@@ -528,11 +528,11 @@ Thing 3) Guitar Amp
 
 Thing 4) Bank
 5 properties:
-    1) total cash
-    2) number of atms
-    3) number of tellers
-    4) internal air temperature
-    5) front door height
+    1) total cash (float)
+    2) number of atms (int)
+    3) number of tellers (int)
+    4) internal air temperature (float)
+    5) front door height (float)
 3 things it can do:
     1) recieve cash
     2) pay teller
@@ -540,11 +540,11 @@ Thing 4) Bank
 
 Thing 5) Wing
 5 properties:
-    1) length
-    2) ice melt fluid type
-    3) number of ribs
-    4) color
-    5) number of flaps
+    1) length (float)
+    2) ice melt fluid type (std::string)
+    3) number of ribs (int)
+    4) color (std::string)
+    5) number of flaps (int)
 3 things it can do:
     1) incline flap
     2) melt ice
@@ -552,11 +552,11 @@ Thing 5) Wing
 
 Thing 6) Cockpit
 5 properties:
-    1) number of pilots
-    2) number of switches
-    3) radar type
-    4) winshield tint level
-    5) winshield height
+    1) number of pilots (int)
+    2) number of switches (int)
+    3) radar type (std::string)
+    4) winshield tint level (float)
+    5) winshield height (float)
 3 things it can do:
     1) turn plane
     2) send message to airport
@@ -564,11 +564,11 @@ Thing 6) Cockpit
 
 Thing 7) Cabin
 5 properties:
-    1) number of passengers
-    2) number of seats
-    3) snack type
-    4) ginger ale type
-    5) legroom depth
+    1) number of passengers (int)
+    2) number of seats (int)
+    3) snack type (std::string)
+    4) ginger ale type (std::string)
+    5) legroom depth (float)
 3 things it can do:
     1) dim lights
     2) serve coffee
@@ -576,11 +576,11 @@ Thing 7) Cabin
 
 Thing 8) Restroom
 5 properties:
-    1) room height
-    2) sink depth
-    3) flush volume in decibels
-    4) number of plies in toilet paper
-    5) soap brand
+    1) room height (float)
+    2) sink depth (float)
+    3) flush volume in decibels (float)
+    4) number of plies in toilet paper (int)
+    5) soap brand (std::string)
 3 things it can do:
     1) flow sink water
     2) illuminate room
@@ -588,11 +588,11 @@ Thing 8) Restroom
 
 Thing 9) Engine
 5 properties:
-    1) number of cylinders
-    2) type of fuel
-    3) chamber pressure
-    4) maximum temperature
-    5) material
+    1) number of cylinders (int)
+    2) type of fuel (std::string)
+    3) chamber pressure (float)
+    4) maximum temperature (float)
+    5) material (std::string)
 3 things it can do:
     1) suck in fuel
     2) combust fuel
@@ -600,11 +600,11 @@ Thing 9) Engine
 
 Thing 10) Airplane
 5 properties:
-    1) Wing
-    2) Cockpit
-    3) Cabin
-    4) Restroom
-    5) Engine
+    1) wing (Wing)
+    2) cockpit (Cockpit)
+    3) cabin (Cabin)
+    4) restroom (Restroom)
+    5) engine (Engine)
 3 things it can do:
     1) takeoff
     2) turn
