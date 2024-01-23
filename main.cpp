@@ -108,7 +108,58 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person
+{
+    int age;
+    float height;
+    float hairLength;
+    float GPA;
+    float SATScore;
+    float distanceTravelled;
 
+    struct Foot
+    {
+        float latitude = 0.0f;
+    
+        float stepSize();
+        void stepForward();
+    };
+
+    void run(float howFast, bool startWithLeftFoot);
+
+    Foot leftFoot;
+    Foot rightFoot;
+};
+
+float Person::Foot::stepSize()
+{
+    return latitude;
+}
+
+void Person::Foot::stepForward()
+{
+    latitude += 0.000001f;
+}
+
+void Person::run(float howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    
+    distanceTravelled += (leftFoot.stepSize() + rightFoot.stepSize()) * howFast;
+    
+    height = hairLength * GPA * SATScore * distanceTravelled;
+    age += 1;
+}
 
 
 
@@ -136,404 +187,379 @@ paste your code below
 */
 struct Iphone
 {
-    // 5 properties:
-    //     1) operating system (std::string)
-        std::string operatingSystem = "iOS";
-    //     2) screen size (float)
-        float screenSize = 8.0f;
-    //     3) speaker type (std::string)
-        std::string speakerType = "Bose";
-    //     4) camera type (std::string)
-        std::string cameraType = "Nikon";
-    //     5) battery life (float)
-        float batteryLife = 100.0f;
+    std::string operatingSystem = "iOS";
+    float screenSize = 8.0f;
+    std::string speakerType = "Bose";
+    std::string cameraType = "Nikon";
+    float batteryLife = 100.0f;
     
-    // 3 things it can do:
-    //     1) browse the web
     void browseTheWeb(std::string url);
-    //     2) play music
     void playMusic(std::string songName);
-    //     3) make phone call
     void makePhoneCall(int number);
 };
 
-/*
-Thing 2) Diner
-5 properties:
-    1) number of employees (int)
-    2) food supplier (std::string)
-    3) hours of operation (std::string)
-    4) number of tables (int)
-    5) star rating (float)
-3 things it can do:
-    1) cook eggs
-    2) serve food
-    3) take orders
-*/
+void Iphone::browseTheWeb(std::string url)
+{   
+    operatingSystem = speakerType + cameraType;
+    std::cout << "www." << url << std::endl;
+}
+
+void Iphone::playMusic(std::string songName)
+{
+    screenSize = batteryLife;
+    std::cout << speakerType << " " << songName << std::endl;
+}
+
+void Iphone::makePhoneCall(int number)
+{
+    number += 1;
+}
+
+
 struct Diner
 {
-    // 5 properties:
-    //     1) number of employees (int)
     int numberOfEmployees = 5;
-    //     2) food supplier (std::string)
     std::string foodSupplier = "Sysco";
-    //     3) hours of operation (std::string)
-    std::string hoursOfOperation = "8-5";
-    //     4) number of tables (int)
+    std::string hoursOfOperation = "eight to five";
     int numberOfTables = 10;
-    //     5) star rating (float)
     float starRating = 5;
     
     struct Kitchen
     {
-        // 5 properties:
-        //     1) number of chefs (int)
         int numberOfChefs = 5;
-        //     2) grill brand (std::string)
         std::string grillBrand = "Weber";
-        //     3) tileType (std::string)
         std::string tileType = "Marble";
-        //     4) number of blenders (int)
         int numberOfBlenders = 10;
-        //     5) temperature (float)
         float temperature = 100.0f;
         
-        // 3 things it can do:
-        //     1) run ood disposal
         void runFoodDisposal();
-        //     2) burn toast
         void burnToast(int numberOfSlices);
-        //     3) receive order
-        std::string receiveOrder(); //return order
+        std::string receiveOrder();
     };
-    
-    // 3 things it can do:
-    //     1) cook eggs
-    void cookEggs(Kitchen kitchen); //pass kitchen to cook the eggs
-    //     2) serve food
+
+    void cookEggs(Kitchen thiskitchen);
     void serveFood(int tableNumber);
-    //     3) take orders
-    std::string takeOrders(); //return orders
+    std::string takeOrders(); 
     
     Kitchen kitchen;
 };
 
-/*
-Thing 3) Guitar Amp
-5 properties:
-    1) Volume control (float)
-    2) FX Type (std::string)
-    3) gain control (float)
-    4) cabinet size (float)
-    5) input voltage (float)
-3 things it can do:
-    1) change volume
-    2) process input
-    3) adjust gain
-*/
+void Diner::Kitchen::runFoodDisposal()
+{
+    numberOfChefs -= numberOfBlenders;
+    std::cout << "Grrrrrrrr" << std::endl;
+}
+
+void Diner::Kitchen::burnToast(int numberOfSlices)
+{
+    if(numberOfSlices == 1 || grillBrand == "Weber")
+    {
+        temperature += 1.0f;
+    }
+    else
+    {
+        temperature += 2.0f;
+    }
+}
+
+std::string Diner::Kitchen::receiveOrder(){
+    return "Roger that!";
+}
+
+void Diner::cookEggs(Kitchen thiskitchen)
+{
+    numberOfTables = numberOfEmployees + thiskitchen.numberOfChefs;
+    std::cout << "You've got crumbs all over my" << kitchen.tileType << std::endl;
+}
+
+void Diner::serveFood(int tableNumber)
+{
+    tableNumber += 1;
+}
+
+
+std::string Diner::takeOrders()
+{
+    return hoursOfOperation + foodSupplier;
+}
+
 struct GuitarAmp
 {
-    // Thing 3) Guitar Amp
-    // 5 properties:
-    //     1) Volume control (float)
     float volumeControl = 50.0f;
-    //     2) FX Type (std::string)
     std::string fxType = "Reverb";
-    //     3) gain control (float)
     float gainControl = 50.0f;
-    //     4) cabinet size (float)
     float cabinetSize = 18.0f;
-    //     5) input voltage (float)
     float inputVoltage = 12.0f;
     
-    // 3 things it can do:
-    //     1) change volume
     void changeVolume(float newVolume);
-    //     2) process input
     void processInput();
-    //     3) adjust gain
     void adjustGain(float newGain);
 };
 
-/*
-Thing 4) Bank
-5 properties:
-    1) total cash (float)
-    2) number of atms (int)
-    3) number of tellers (int)
-    4) internal air temperature (float)
-    5) front door height (float)
-3 things it can do:
-    1) recieve cash
-    2) pay teller
-    3) hire manager
-*/
+void GuitarAmp::changeVolume(float newVolume)
+{
+    volumeControl = newVolume;
+    cabinetSize = 14.0f;
+}
+
+void GuitarAmp::processInput()
+{
+    fxType = "chuggawugga";
+    inputVoltage = 11.9f;
+}
+
+void GuitarAmp::adjustGain(float newGain)
+{
+    gainControl = newGain;
+}
+
 struct Bank
 {
-    // 5 properties:
-    //     1) total cash (float)
     float totalCash = 1000000.0f;
-    //     2) number of atms (int)
     int numberOfAtms = 3;
-    //     3) number of tellers (int)
     int numberOfTellers = 3;
-    //     4) internal air temperature (float)
     float internalAirTemperature = 70.0f;
-    //     5) front door height (float)
     float frontDoorHeight = 100.0f;
-    
-    // 3 things it can do:
-    //     1) recieve cash
-    int receieveCash(float amount); //return deposit id
-    //     2) pay teller
+
+    int receieveCash(float amount);
     void payTeller(float amount);
-    //     3) hire manager
     void hireManager(std::string name);
 };
 
-/*
-Thing 5) Wing
-5 properties:
-    1) length (float)
-    2) ice melt fluid type (std::string)
-    3) number of ribs (int)
-    4) color (std::string)
-    5) number of flaps (int)
-3 things it can do:
-    1) incline flap
-    2) melt ice
-    3) flash light
-*/
+int Bank::receieveCash(float amount)
+{
+    totalCash += amount;
+    internalAirTemperature += frontDoorHeight;
+    return 1;
+}
+
+void Bank::payTeller(float amount)
+{
+    std::cout << "Please take $" << amount << std::endl;
+}
+
+void Bank::hireManager(std::string name)
+{
+    std::cout << "Hi " << name << std::endl;
+    numberOfTellers += numberOfAtms;
+}
+
 struct Wing
 {
-    // 5 properties:
-    //     1) length (float)
     float length = 20.0f;
-    //     2) ice melt fluid type (std::string)
     std::string iceMeltFluidType = "Dr. Lava";
-    //     3) number of ribs (int)
     int numberOfRibs = 10;
-    //     4) color (std::string)
     std::string color = "Greenish Red";
-    //     5) number of flaps (int)
     int numberOfFlaps = 3;
-    
-    // 3 things it can do:
-    //     1) incline flap
+
     void inclineFlap();
-    //     2) melt ice
     void meltIce();
-    //     3) flash light
-    void flashLight(std::string color);
+    void flashLight(std::string otherColor);
 };
 
-/*
-Thing 6) Cockpit
-5 properties:
-    1) number of pilots (int)
-    2) number of switches (int)
-    3) radar type (std::string)
-    4) winshield tint level (float)
-    5) winshield height (float)
-3 things it can do:
-    1) turn plane
-    2) send message to airport
-    3) send PA message to cabin
-*/
+void Wing::inclineFlap()
+{
+    std::cout << "Pffpfpfpfpppppffpffp " << std::endl;
+    numberOfRibs = numberOfFlaps;
+}
+
+void Wing::meltIce()
+{
+    std::cout << "Applying " << iceMeltFluidType << std::endl;
+}
+
+void Wing::flashLight(std::string otherColor)
+{
+    color = otherColor;
+    length = 21.0f;
+}
+
 struct Cockpit
 {
-    // 5 properties:
-    //     1) number of pilots (int)
     int numberOfPilots = 3;
-    //     2) number of switches (int)
     int numberOfSwitches = 1400;
-    //     3) radar type (std::string)
     std::string radarType = "Expensive and Fancy";
-    //     4) winshield tint level (float)
     float winshieldTintLevel = 100.0f;
-    //     5) winshield height (float)
     float winshieldHeight = 18.0f;
-    
-    // 3 things it can do:
-    //     1) turn plane
+
     void turnPlane();
-    //     2) send message to airport
-    bool sendMessageToAirport(std::string message); //return success (true) or failure (false)
-    //     3) send PA message to cabin
+    bool sendMessageToAirport(std::string message); 
     void sendPaMessageToCabin(std::string message);
 };
 
-/*
-Thing 7) Cabin
-5 properties:
-    1) number of passengers (int)
-    2) number of seats (int)
-    3) snack type (std::string)
-    4) ginger ale type (std::string)
-    5) legroom depth (float)
-3 things it can do:
-    1) dim lights
-    2) serve coffee
-    3) play music
-*/
+void Cockpit::turnPlane()
+{
+    winshieldHeight -= winshieldTintLevel;
+    numberOfPilots = numberOfSwitches;
+}
+
+bool Cockpit::sendMessageToAirport(std::string message)
+{
+    std::cout << "Hey airport... " << message << std::endl;
+    return true;
+}
+
+void Cockpit::sendPaMessageToCabin(std::string message)
+{
+    std::cout << "Hey guys don't be mad but" << message << ". Also, " << radarType << std::endl;
+}
+
 struct Cabin
 {
-    // 5 properties:
-    //     1) number of passengers (int)
     int numberOfPassengers = 50;
-    //     2) number of seats (int)
     int numberOfSeats = 49;
-    //     3) snack type (std::string)
     std::string snackType = "Bugles";
-    //     4) ginger ale type (std::string)
     std::string gingerAletype = "Canada Dry";
-    //     5) legroom depth (float)
     float legroomDepth = 0.0f;
     
     struct FlightAttendant
     {
-        // 5 properties:
-        //     1) number of eyeballs (int)
         int numberOfEyeballs = 1;
-        //     2) number of elbows (int)
         int numberOfElbows = 2;
-        //     3) deoderant brand (std::string)
         std::string deoderantBrand = "Mitchum";
-        //     4) favorite dance type (std::string)
         std::string favoriteDanceType = "Disco";
-        //     5) ear size (float)
         float earSize = 0.0f;
         
-        // 3 things it can do:
-        //     1) dance
         void dance(float insanityLevel);
-        //     2) bend knee
-        float bendKnee(); //return degrees bent
-        //     3) speak
+        float bendKnee();
         void speak();
     };
     
-    // 3 things it can do:
-    //     1) dim lights
     void dimLights(float newLevel);
-    //     2) serve coffee
-    float serveCoffee(FlightAttendant flightAttendant); //pass server, return tip amount
-    //     3) play music
+    float serveCoffee(FlightAttendant flightAttendant);
     void playMusic();
     
     FlightAttendant joseph;
-    
     FlightAttendant nadine;
 };
 
-/*
-Thing 8) Restroom
-5 properties:
-    1) room height (float)
-    2) sink depth (float)
-    3) flush volume in decibels (float)
-    4) number of plies in toilet paper (int)
-    5) soap brand (std::string)
-3 things it can do:
-    1) flow sink water
-    2) illuminate room
-    3) move load to tank
-*/
+
+void Cabin::FlightAttendant::dance(float insanityLevel)
+{
+    std::cout << "I had like " << insanityLevel << " cups of coffee before this" << std::endl;
+}
+
+float Cabin::FlightAttendant::bendKnee()
+{
+    earSize *= 2.0f;
+    return earSize;
+}
+
+void Cabin::FlightAttendant::speak()
+{
+    std::cout << "About what?" << std::endl;
+    std::cout << deoderantBrand << favoriteDanceType << std::endl;
+}
+
+void Cabin::dimLights(float newLevel)
+{
+    newLevel += legroomDepth;
+    std::cout << snackType << " and " << gingerAletype << std::endl;
+}
+
+float Cabin::serveCoffee(FlightAttendant flightAttendant)
+{
+    flightAttendant.bendKnee();
+    return legroomDepth;
+}
+
+void Cabin::playMusic()
+{
+    if(numberOfPassengers < numberOfSeats)
+    {
+        joseph.numberOfEyeballs = 0;
+        nadine.numberOfElbows = 0;
+    }
+}
+
 struct Restroom
 {
-    // 5 properties:
-    //     1) room height (float)
     float roomHeight = 120.0f;
-    //     2) sink depth (float)
     float sinkDepth = 0.1f;
-    //     3) flush volume in decibels (float)
     float flushVolumeInDecibels = 150.0f;
-    //     4) number of plies in toilet paper (int)
     int numberOfPliesInToiletPaper = 1;
-    //     5) soap brand (std::string)
     std::string soapBrand = "Sergeant Scrub";
     
-    // 3 things it can do:
-    //     1) flow sink water
     void flowSinkWater();
-    //     2) illuminate room
     void illuminateRoom(float newLevel);
-    //     3) move load to tank
-    float moveLoadToTank();//return tank level
+    float moveLoadToTank();
 };
 
-/*
-Thing 9) Engine
-5 properties:
-    1) number of cylinders (int)
-    2) type of fuel (std::string)
-    3) chamber pressure (float)
-    4) maximum temperature (float)
-    5) material (std::string)
-3 things it can do:
-    1) suck in fuel
-    2) combust fuel
-    3) spin axle
-*/
+void Restroom::flowSinkWater()
+{
+    sinkDepth -= 1.0f;
+    numberOfPliesInToiletPaper += 1;
+}
+
+void Restroom::illuminateRoom(float newLevel)
+{
+    flushVolumeInDecibels = newLevel / roomHeight;
+}
+
+float Restroom::moveLoadToTank()
+{
+    std::cout << "farewell" << soapBrand << std::endl;
+    return flushVolumeInDecibels;
+}
+
 struct Engine
 {
-    // 5 properties:
-    //     1) number of cylinders (int)
     int numberOfCylinders = 6;
-    //     2) type of fuel (std::string)
     std::string typeOfFuel = "Jet Fuel";
-    //     3) chamber pressure (float)
     float chamberPressure = 14.7f;
-    //     4) maximum temperature (float)
     float maximumTemperature = 451.0f;
-    //     5) material (std::string)
     std::string material = "Gold";
     
-    // 3 things it can do:
-    //     1) suck in fuel
     void suckInFuel();
-    //     2) combust fuel
     void combustFuel();
-    //     3) spin axle
-    float spinAxle(); //return axle rpm
+    float spinAxle();
 };
 
-/*
-Thing 10) Airplane
-5 properties:
-    1) wing (Wing)
-    2) cockpit (Cockpit)
-    3) cabin (Cabin)
-    4) restroom (Restroom)
-    5) engine (Engine)
-3 things it can do:
-    1) takeoff
-    2) turn
-    3) ping radar
-*/
+void Engine::suckInFuel()
+{
+    std::cout << "yea the " << typeOfFuel << " in the "<< material << " bottle" << std::endl;
+}
+
+void Engine::combustFuel()
+{
+    numberOfCylinders += 1;
+}
+
+float Engine::spinAxle()
+{
+    return chamberPressure * maximumTemperature;
+}
+
 struct Airplane
 {
-    // 5 properties:
-    //     1) wing (Wing)
     Wing wing;
-    //     2) cockpit (Cockpit)
     Cockpit cockpit;
-    //     3) cabin (Cabin)
     Cabin cabin;
-    //     4) restroom (Restroom)
     Restroom restroom;
-    //     5) engine (Engine)
     Engine engine;
     
-    // 3 things it can do:
-    //     1) takeoff
     void takeoff();
-    //     2) turn
     void turn(float angle);
-    //     3) ping radar
-    float pingRadar();//return distance from object
+    float pingRadar();
 };
 
+void Airplane::takeoff()
+{
+    wing.inclineFlap();
+    cockpit.sendPaMessageToCabin("Have fun");
+    cabin.playMusic();
+}
+
+void Airplane::turn(float angle)
+{
+    angle *= 2.0f;
+    engine.suckInFuel();
+}
+
+float Airplane::pingRadar()
+{
+    return restroom.moveLoadToTank();
+}
 
 int main()
 {
