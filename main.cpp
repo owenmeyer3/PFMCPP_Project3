@@ -124,10 +124,10 @@ struct Person{
         void stepForward();
     };
 
+    void run(float howFast, bool startWithLeftFoot);
+
     Foot leftFoot;
     Foot rightFoot;
-
-    void run(float howFast, bool startWithLeftFoot);
 };
 
 float Person::Foot::stepSize()
@@ -156,7 +156,7 @@ void Person::run(float howFast, bool startWithLeftFoot)
     
     distanceTravelled += (leftFoot.stepSize() + rightFoot.stepSize()) * howFast;
     
-    height = hairLength*GPA*SATScore*distanceTravelled;
+    height = hairLength * GPA * SATScore * distanceTravelled;
     age += 1;
 }
 
