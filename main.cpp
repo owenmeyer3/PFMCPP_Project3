@@ -108,7 +108,8 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
-struct Person{
+struct Person
+{
     int age;
     float height;
     float hairLength;
@@ -273,7 +274,7 @@ void Diner::cookEggs(Kitchen thiskitchen)
 
 void Diner::serveFood(int tableNumber)
 {
-        tableNumber += 1;
+    tableNumber += 1;
 }
 
 
