@@ -49,10 +49,10 @@ struct Iphone
 {
     Iphone();
     
-    std::string operatingSystem = "iOS";
-    float screenSize = 8.0f;
-    std::string speakerType = "Bose";
-    std::string cameraType = "Nikon";
+    std::string operatingSystem;
+    float screenSize{8.0f};
+    std::string speakerType;
+    std::string cameraType;
     float batteryLife = 100.0f;
     
     void browseTheWeb(std::string url);
@@ -60,7 +60,10 @@ struct Iphone
     void makePhoneCall(int number);
 };
 
-Iphone::Iphone()
+Iphone::Iphone():
+operatingSystem("iOS"),
+speakerType("Bose"),
+cameraType("Nikon")
 {   
     std::cout << "Constructing IPhone" << std::endl;
 }
@@ -79,6 +82,7 @@ void Iphone::playMusic(std::string songName)
 
 void Iphone::makePhoneCall(int number)
 {
+    std::cout << "Listen on on " << speakerType << " speakers" << std::endl;
     number += 1;
 }
 
@@ -87,7 +91,7 @@ struct Diner
 {
     Diner();
 
-    int numberOfEmployees = 5;
+    int numberOfEmployees;
     std::string foodSupplier = "Sysco";
     std::string hoursOfOperation = "eight to five";
     int numberOfTables = 10;
@@ -97,8 +101,8 @@ struct Diner
     {
         Kitchen();
 
-        int numberOfChefs = 5;
-        std::string grillBrand = "Weber";
+        int numberOfChefs;
+        std::string grillBrand;
         std::string tileType = "Marble";
         int numberOfBlenders = 10;
         float temperature = 100.0f;
@@ -115,12 +119,15 @@ struct Diner
     Kitchen kitchen;
 };
 
-Diner::Diner()
+Diner::Diner():
+numberOfEmployees(5)
 {   
-    std::cout << "Constructing Diner" << std::endl;
+    std::cout << "Constructing Diner with " << numberOfEmployees << " employees" << std::endl;
 }
 
-Diner::Kitchen::Kitchen()
+Diner::Kitchen::Kitchen():
+numberOfChefs(5), 
+grillBrand("Weber")
 {   
     std::cout << "Constructing Diner::Kitchen" << std::endl;
 }
@@ -133,6 +140,8 @@ void Diner::Kitchen::runFoodDisposal()
 
 void Diner::Kitchen::burnToast(int numberOfSlices)
 {
+    std::cout << "Cooking toast on " << grillBrand << " grill" << std::endl;
+    
     if(numberOfSlices == 1 || grillBrand == "Weber")
     {
         temperature += 1.0f;
@@ -168,8 +177,8 @@ struct GuitarAmp
 {
     GuitarAmp();
 
-    float volumeControl = 50.0f;
-    std::string fxType = "Reverb";
+    float volumeControl;
+    std::string fxType;
     float gainControl = 50.0f;
     float cabinetSize = 18.0f;
     float inputVoltage = 12.0f;
@@ -179,7 +188,9 @@ struct GuitarAmp
     void adjustGain(float newGain);
 };
 
-GuitarAmp::GuitarAmp()
+GuitarAmp::GuitarAmp():
+volumeControl(50.0f),
+fxType("Reverb")
 {   
     std::cout << "Constructing GuitarAmp" << std::endl;
 }
@@ -206,8 +217,8 @@ struct Bank
     Bank();
 
     float totalCash = 1000000.0f;
-    int numberOfAtms = 3;
-    int numberOfTellers = 3;
+    int numberOfAtms;
+    int numberOfTellers;
     float internalAirTemperature = 70.0f;
     float frontDoorHeight = 100.0f;
 
@@ -216,7 +227,9 @@ struct Bank
     void hireManager(std::string name);
 };
 
-Bank::Bank()
+Bank::Bank():
+numberOfAtms(3),
+numberOfTellers(3)
 {   
     std::cout << "Constructing Bank" << std::endl;
 }
@@ -244,9 +257,9 @@ struct Wing
     Wing();
 
     float length = 20.0f;
-    std::string iceMeltFluidType = "Dr. Lava";
+    std::string iceMeltFluidType;
     int numberOfRibs = 10;
-    std::string color = "Greenish Red";
+    std::string color;
     int numberOfFlaps = 3;
 
     void inclineFlap();
@@ -254,7 +267,9 @@ struct Wing
     void flashLight(std::string otherColor);
 };
 
-Wing::Wing()
+Wing::Wing():
+iceMeltFluidType("Dr. Lava"),
+color("Greenish Red")
 {   
     std::cout << "Constructing Wing" << std::endl;
 }
@@ -280,9 +295,9 @@ struct Cockpit
 {
     Cockpit();
 
-    int numberOfPilots = 3;
+    int numberOfPilots;
     int numberOfSwitches = 1400;
-    std::string radarType = "Expensive and Fancy";
+    std::string radarType;
     float winshieldTintLevel = 100.0f;
     float winshieldHeight = 18.0f;
 
@@ -291,7 +306,9 @@ struct Cockpit
     void sendPaMessageToCabin(std::string message);
 };
 
-Cockpit::Cockpit()
+Cockpit::Cockpit():
+numberOfPilots(3),
+radarType("Expensive and Fancy")
 {   
     std::cout << "Constructing Cockpit" << std::endl;
 }
@@ -310,15 +327,15 @@ bool Cockpit::sendMessageToAirport(std::string message)
 
 void Cockpit::sendPaMessageToCabin(std::string message)
 {
-    std::cout << "Hey guys don't be mad but" << message << ". Also, " << radarType << std::endl;
+    std::cout << "Hey guys don't be mad but " << message << ". Also, " << radarType << std::endl;
 }
 
 struct Cabin
 {
     Cabin();
 
-    int numberOfPassengers = 50;
-    int numberOfSeats = 49;
+    int numberOfPassengers;
+    int numberOfSeats;
     std::string snackType = "Bugles";
     std::string gingerAletype = "Canada Dry";
     float legroomDepth = 0.0f;
@@ -327,8 +344,8 @@ struct Cabin
     {
         FlightAttendant();
 
-        int numberOfEyeballs = 1;
-        int numberOfElbows = 2;
+        int numberOfEyeballs;
+        int numberOfElbows;
         std::string deoderantBrand = "Mitchum";
         std::string favoriteDanceType = "Disco";
         float earSize = 0.0f;
@@ -346,12 +363,16 @@ struct Cabin
     FlightAttendant nadine;
 };
 
-Cabin::Cabin()
+Cabin::Cabin():
+numberOfPassengers(50),
+numberOfSeats(49)
 {   
     std::cout << "Constructing Cabin" << std::endl;
 }
 
-Cabin::FlightAttendant::FlightAttendant()
+Cabin::FlightAttendant::FlightAttendant():
+numberOfEyeballs(1),
+numberOfElbows(2)
 {   
     std::cout << "Constructing Cabin::FlightAttendant" << std::endl;
 }
@@ -401,15 +422,17 @@ struct Restroom
     float roomHeight = 120.0f;
     float sinkDepth = 0.1f;
     float flushVolumeInDecibels = 150.0f;
-    int numberOfPliesInToiletPaper = 1;
-    std::string soapBrand = "Sergeant Scrub";
+    int numberOfPliesInToiletPaper;
+    std::string soapBrand;
     
     void flowSinkWater();
     void illuminateRoom(float newLevel);
     float moveLoadToTank();
 };
 
-Restroom::Restroom()
+Restroom::Restroom():
+numberOfPliesInToiletPaper(1),
+soapBrand("Sergeant Scrub")
 {   
     std::cout << "Constructing Restroom" << std::endl;
 }
@@ -436,8 +459,8 @@ struct Engine
     Engine();
 
     int numberOfCylinders = 6;
-    std::string typeOfFuel = "Jet Fuel";
-    float chamberPressure = 14.7f;
+    std::string typeOfFuel;
+    float chamberPressure;
     float maximumTemperature = 451.0f;
     std::string material = "Gold";
     
@@ -446,7 +469,9 @@ struct Engine
     float spinAxle();
 };
 
-Engine::Engine()
+Engine::Engine():
+typeOfFuel("Jet Fuel"),
+chamberPressure(14.7f)
 {   
     std::cout << "Constructing Engine" << std::endl;
 }
