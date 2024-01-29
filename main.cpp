@@ -78,6 +78,8 @@ paste your code below
 */
 struct Iphone
 {
+    Iphone();
+    
     std::string operatingSystem = "iOS";
     float screenSize = 8.0f;
     std::string speakerType = "Bose";
@@ -88,6 +90,11 @@ struct Iphone
     void playMusic(std::string songName);
     void makePhoneCall(int number);
 };
+
+Iphone::Iphone()
+{   
+    std::cout << "Constructing IPhone" << std::endl;
+}
 
 void Iphone::browseTheWeb(std::string url)
 {   
@@ -109,6 +116,8 @@ void Iphone::makePhoneCall(int number)
 
 struct Diner
 {
+    Diner();
+
     int numberOfEmployees = 5;
     std::string foodSupplier = "Sysco";
     std::string hoursOfOperation = "eight to five";
@@ -117,6 +126,8 @@ struct Diner
     
     struct Kitchen
     {
+        Kitchen();
+
         int numberOfChefs = 5;
         std::string grillBrand = "Weber";
         std::string tileType = "Marble";
@@ -134,6 +145,16 @@ struct Diner
     
     Kitchen kitchen;
 };
+
+Diner::Diner()
+{   
+    std::cout << "Constructing Diner" << std::endl;
+}
+
+Diner::Kitchen::Kitchen()
+{   
+    std::cout << "Constructing Diner::Kitchen" << std::endl;
+}
 
 void Diner::Kitchen::runFoodDisposal()
 {
@@ -160,7 +181,7 @@ std::string Diner::Kitchen::receiveOrder(){
 void Diner::cookEggs(Kitchen thiskitchen)
 {
     numberOfTables = numberOfEmployees + thiskitchen.numberOfChefs;
-    std::cout << "You've got crumbs all over my" << kitchen.tileType << std::endl;
+    std::cout << "You've got crumbs all over my " << kitchen.tileType << std::endl;
 }
 
 void Diner::serveFood(int tableNumber)
@@ -171,11 +192,13 @@ void Diner::serveFood(int tableNumber)
 
 std::string Diner::takeOrders()
 {
-    return hoursOfOperation + foodSupplier;
+    return hoursOfOperation + " " + foodSupplier;
 }
 
 struct GuitarAmp
 {
+    GuitarAmp();
+
     float volumeControl = 50.0f;
     std::string fxType = "Reverb";
     float gainControl = 50.0f;
@@ -186,6 +209,11 @@ struct GuitarAmp
     void processInput();
     void adjustGain(float newGain);
 };
+
+GuitarAmp::GuitarAmp()
+{   
+    std::cout << "Constructing GuitarAmp" << std::endl;
+}
 
 void GuitarAmp::changeVolume(float newVolume)
 {
@@ -206,18 +234,25 @@ void GuitarAmp::adjustGain(float newGain)
 
 struct Bank
 {
+    Bank();
+
     float totalCash = 1000000.0f;
     int numberOfAtms = 3;
     int numberOfTellers = 3;
     float internalAirTemperature = 70.0f;
     float frontDoorHeight = 100.0f;
 
-    int receieveCash(float amount);
+    int receiveCash(float amount);
     void payTeller(float amount);
     void hireManager(std::string name);
 };
 
-int Bank::receieveCash(float amount)
+Bank::Bank()
+{   
+    std::cout << "Constructing Bank" << std::endl;
+}
+
+int Bank::receiveCash(float amount)
 {
     totalCash += amount;
     internalAirTemperature += frontDoorHeight;
@@ -237,6 +272,8 @@ void Bank::hireManager(std::string name)
 
 struct Wing
 {
+    Wing();
+
     float length = 20.0f;
     std::string iceMeltFluidType = "Dr. Lava";
     int numberOfRibs = 10;
@@ -247,6 +284,11 @@ struct Wing
     void meltIce();
     void flashLight(std::string otherColor);
 };
+
+Wing::Wing()
+{   
+    std::cout << "Constructing Wing" << std::endl;
+}
 
 void Wing::inclineFlap()
 {
@@ -267,6 +309,8 @@ void Wing::flashLight(std::string otherColor)
 
 struct Cockpit
 {
+    Cockpit();
+
     int numberOfPilots = 3;
     int numberOfSwitches = 1400;
     std::string radarType = "Expensive and Fancy";
@@ -277,6 +321,11 @@ struct Cockpit
     bool sendMessageToAirport(std::string message); 
     void sendPaMessageToCabin(std::string message);
 };
+
+Cockpit::Cockpit()
+{   
+    std::cout << "Constructing Cockpit" << std::endl;
+}
 
 void Cockpit::turnPlane()
 {
@@ -297,6 +346,8 @@ void Cockpit::sendPaMessageToCabin(std::string message)
 
 struct Cabin
 {
+    Cabin();
+
     int numberOfPassengers = 50;
     int numberOfSeats = 49;
     std::string snackType = "Bugles";
@@ -305,6 +356,8 @@ struct Cabin
     
     struct FlightAttendant
     {
+        FlightAttendant();
+
         int numberOfEyeballs = 1;
         int numberOfElbows = 2;
         std::string deoderantBrand = "Mitchum";
@@ -324,6 +377,15 @@ struct Cabin
     FlightAttendant nadine;
 };
 
+Cabin::Cabin()
+{   
+    std::cout << "Constructing Cabin" << std::endl;
+}
+
+Cabin::FlightAttendant::FlightAttendant()
+{   
+    std::cout << "Constructing Cabin::FlightAttendant" << std::endl;
+}
 
 void Cabin::FlightAttendant::dance(float insanityLevel)
 {
@@ -339,7 +401,7 @@ float Cabin::FlightAttendant::bendKnee()
 void Cabin::FlightAttendant::speak()
 {
     std::cout << "About what?" << std::endl;
-    std::cout << deoderantBrand << favoriteDanceType << std::endl;
+    std::cout << deoderantBrand << " " << favoriteDanceType << std::endl;
 }
 
 void Cabin::dimLights(float newLevel)
@@ -365,6 +427,8 @@ void Cabin::playMusic()
 
 struct Restroom
 {
+    Restroom();
+
     float roomHeight = 120.0f;
     float sinkDepth = 0.1f;
     float flushVolumeInDecibels = 150.0f;
@@ -375,6 +439,11 @@ struct Restroom
     void illuminateRoom(float newLevel);
     float moveLoadToTank();
 };
+
+Restroom::Restroom()
+{   
+    std::cout << "Constructing Restroom" << std::endl;
+}
 
 void Restroom::flowSinkWater()
 {
@@ -389,12 +458,14 @@ void Restroom::illuminateRoom(float newLevel)
 
 float Restroom::moveLoadToTank()
 {
-    std::cout << "farewell" << soapBrand << std::endl;
+    std::cout << "farewell " << soapBrand << std::endl;
     return flushVolumeInDecibels;
 }
 
 struct Engine
 {
+    Engine();
+
     int numberOfCylinders = 6;
     std::string typeOfFuel = "Jet Fuel";
     float chamberPressure = 14.7f;
@@ -405,6 +476,11 @@ struct Engine
     void combustFuel();
     float spinAxle();
 };
+
+Engine::Engine()
+{   
+    std::cout << "Constructing Engine" << std::endl;
+}
 
 void Engine::suckInFuel()
 {
@@ -423,6 +499,8 @@ float Engine::spinAxle()
 
 struct Airplane
 {
+    Airplane();
+
     Wing wing;
     Cockpit cockpit;
     Cabin cabin;
@@ -433,6 +511,11 @@ struct Airplane
     void turn(float angle);
     float pingRadar();
 };
+
+Airplane::Airplane()
+{   
+    std::cout << "Constructing Airplane" << std::endl;
+}
 
 void Airplane::takeoff()
 {
@@ -456,6 +539,97 @@ int main()
 {
     Example::main();
 
-    
+    Iphone myPhone;
+    Iphone davesPhone;
+    Diner jerrys;
+    Diner::Kitchen jerrysKitchen;
+    GuitarAmp thisOldAmp;
+    Bank chase;
+    Wing leftWing;
+    Wing rightWing;
+    Cockpit pilotsPad;
+    Cabin passengersClub;
+    Cabin::FlightAttendant jerry;
+    Cabin::FlightAttendant jessica;
+    Restroom ladiesRoom;
+    Engine jetOne;
+    Engine jetTwo;
+    Airplane delta306;
+
+    myPhone.browseTheWeb("homestarrunner.com");
+    myPhone.playMusic("Night Mommas");
+    myPhone.makePhoneCall(5551234);
+
+    davesPhone.browseTheWeb("namethatbeard.com");
+    davesPhone.playMusic("Sharp Dressed Man");
+    davesPhone.makePhoneCall(5559876);
+
+    jerrysKitchen.runFoodDisposal();
+    jerrysKitchen.burnToast(1);
+    std::string kitchenOrder = jerrysKitchen.receiveOrder();
+    std::cout << "Here's your " << kitchenOrder << std::endl;
+
+    jerrys.serveFood(12);
+    jerrys.cookEggs(jerrysKitchen);
+    std::string tableOrder = jerrys.takeOrders();
+    std::cout << "Here's your " << tableOrder << std::endl;
+
+    thisOldAmp.changeVolume(5.0f);
+    thisOldAmp.processInput();
+    thisOldAmp.adjustGain(5.0f);
+
+    int status = chase.receiveCash(3.0f);
+    chase.payTeller(3.0f);
+    chase.hireManager("Jerry's mom");
+    std::cout << "Status: " << std::to_string(status) << std::endl;
+
+    leftWing.inclineFlap();
+    leftWing.meltIce();
+    leftWing.flashLight("bluish yellow");
+
+    rightWing.inclineFlap();
+    rightWing.meltIce();
+    rightWing.flashLight("purplish green");
+
+    pilotsPad.turnPlane();
+    bool airportResponse = pilotsPad.sendMessageToAirport("Control tower we have violent turbulence. We are scared.");
+    std::string airportResponseString = airportResponse ? "true" : "false";
+    pilotsPad.sendPaMessageToCabin("bumpy ride today right?");
+    std::cout << "To that I say: " << airportResponseString << std::endl;
+
+    jerry.dance(7.0f);
+    float jerrysEar = jerry.bendKnee();
+    jerry.speak();
+    std::cout << "gross me out, " << std::to_string(jerrysEar) << std::endl;
+
+    jessica.dance(14000.0f);
+    float jessicasEar = jessica.bendKnee();
+    jessica.speak();
+    std::cout << "hear me, " << std::to_string(jessicasEar) << std::endl;
+
+    passengersClub.dimLights(11.0f);
+    float legroom = passengersClub.serveCoffee(jessica);
+    passengersClub.playMusic();
+    std::cout << "Here's your " << std::to_string(legroom) << std::endl;
+
+    ladiesRoom.flowSinkWater();
+    ladiesRoom.illuminateRoom(5.0f);
+    float flushVolumeInDecibels = ladiesRoom.moveLoadToTank();
+    std::cout << "Here's your " << std::to_string(flushVolumeInDecibels) << std::endl;
+
+    jetOne.suckInFuel();
+    jetOne.combustFuel();
+    float maxVolume = jetOne.spinAxle();
+    std::cout << "Here's your " << std::to_string(maxVolume) << std::endl;
+
+    jetTwo.suckInFuel();
+    jetTwo.combustFuel();
+    jetTwo.spinAxle();
+
+    delta306.takeoff();
+    delta306.turn(90.1f);
+    float flushSpinDirection = delta306.pingRadar();
+    std::cout << "Here's your " << std::to_string(flushSpinDirection) << std::endl;
+
     std::cout << "good to go!" << std::endl;
 }
