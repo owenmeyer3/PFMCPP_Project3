@@ -648,8 +648,8 @@ bool Restroom::callMaintenence(float toiletLevel, int numberOfVisitors)
         }
         else
         {
-        std::cout << "Uh oh!" << std::endl;
-        return false;
+            std::cout << "Uh oh!" << std::endl;
+            return false;
         }
     }
     
@@ -801,19 +801,19 @@ int main()
 
     jerrysKitchen.runFoodDisposal();
     jerrysKitchen.burnToast(1);
-    std::string kitchenOrder = jerrysKitchen.receiveOrder();
+    auto kitchenOrder = jerrysKitchen.receiveOrder();
     std::cout << kitchenOrder << std::endl;
 
     jerrys.serveFood(12);
     jerrys.cookEggs(jerrysKitchen);
-    std::string tableOrder = jerrys.takeOrders();
+    auto tableOrder = jerrys.takeOrders();
     std::cout << "Here's your " << tableOrder << std::endl;
 
     thisOldAmp.changeVolume(5.0f);
     thisOldAmp.processInput();
     thisOldAmp.adjustGain(5.0f);
 
-    int status = chase.receiveCash(3.0f);
+    auto status = chase.receiveCash(3.0f);
     chase.payTeller(3.0f);
     chase.hireManager("Jerry's mom");
     std::cout << "Status: " << std::to_string(status) << std::endl;
@@ -827,34 +827,34 @@ int main()
     rightWing.flashLight("purplish green");
 
     pilotsPad.turnPlane();
-    bool airportResponse = pilotsPad.sendMessageToAirport("Control tower we have violent turbulence. We are scared.");
-    std::string airportResponseString = airportResponse ? "true" : "false";
+    auto airportResponse = pilotsPad.sendMessageToAirport("Control tower we have violent turbulence. We are scared.");
+    auto airportResponseString = airportResponse ? "true" : "false";
     pilotsPad.sendPaMessageToCabin("bumpy ride today right?");
     std::cout << "To that I say: " << airportResponseString << std::endl;
 
     jerry.dance(7.0f);
-    float jerrysEar = jerry.bendKnee();
+    auto jerrysEar = jerry.bendKnee();
     jerry.speak();
     std::cout << "gross me out, " << std::to_string(jerrysEar) << std::endl;
 
     jessica.dance(14000.0f);
-    float jessicasEar = jessica.bendKnee();
+    auto jessicasEar = jessica.bendKnee();
     jessica.speak();
     std::cout << "hear me, " << std::to_string(jessicasEar) << std::endl;
 
     passengersClub.dimLights(11.0f);
-    float legroom = passengersClub.serveCoffee(jessica);
+    auto legroom = passengersClub.serveCoffee(jessica);
     passengersClub.playMusic();
     std::cout << "Legroom: " << std::to_string(legroom) << std::endl;
 
     ladiesRoom.flowSinkWater();
     ladiesRoom.illuminateRoom(5.0f);
-    float flushVolumeInDecibels = ladiesRoom.moveLoadToTank();
+    auto flushVolumeInDecibels = ladiesRoom.moveLoadToTank();
     std::cout << "This loud: " << std::to_string(flushVolumeInDecibels) << std::endl;
 
     jetOne.suckInFuel();
     jetOne.combustFuel();
-    float maxVolume = jetOne.spinAxle();
+    auto maxVolume = jetOne.spinAxle();
     std::cout << "This loud: " << std::to_string(maxVolume) << std::endl;
 
     jetTwo.suckInFuel();
@@ -863,43 +863,43 @@ int main()
 
     delta306.takeoff();
     delta306.turn(90.1f);
-    float flushSpinDirection = delta306.pingRadar();
+    auto flushSpinDirection = delta306.pingRadar();
     std::cout << "Spin this way: " << std::to_string(flushSpinDirection) << std::endl;
 
     myPhone.screenShrinker(15);
 
-    float temp = jerrysKitchen.addBodyHeat();
+    auto temp = jerrysKitchen.addBodyHeat();
     std::cout << "New temp: " << std::to_string(temp) << std::endl;
 
     jerrys.loseRating(5);
 
-    bool neighborIsAngry = thisOldAmp.checkIfNeighborsAngry(70.0f);
-    std::string neighborIsAngryString = neighborIsAngry ? "true" : "false";
+    auto neighborIsAngry = thisOldAmp.checkIfNeighborsAngry(70.0f);
+    auto neighborIsAngryString = neighborIsAngry ? "true" : "false";
     std::cout << "Are you angry? " << neighborIsAngryString << std::endl;
 
-    float moneyStolen = chase.robbery("buff guy");
+    auto moneyStolen = chase.robbery("buff guy");
     std::cout << "$" << std::to_string(moneyStolen) << " lost" << std::endl;
 
     leftWing.breakRib();
 
     pilotsPad.removeFamily(5, "reasonable");
 
-    float coffeeLevel = jessica.pourCoffee(5.0f, 25);
+    auto coffeeLevel = jessica.pourCoffee(5.0f, 25);
     std::cout << "coffeeleft: " << std::to_string(coffeeLevel) << std::endl;
     
-    float angle = passengersClub.reclineSeat(40.0f, true);
+    auto angle = passengersClub.reclineSeat(40.0f, true);
     std::cout << "This far back: " << std::to_string(angle) << std::endl;
 
-    bool ladiesRoomStatus = ladiesRoom.callMaintenence(15.0f, 10);
-    std::string ladiesRoomStatusString = ladiesRoomStatus ? "true" : "false";
+    auto ladiesRoomStatus = ladiesRoom.callMaintenence(15.0f, 10);
+    auto ladiesRoomStatusString = ladiesRoomStatus ? "true" : "false";
     std::cout << "Bathroom status: " << ladiesRoomStatusString << std::endl;
 
-    bool roomLeft = jetOne.addFluid(0.0f, 20, 10.0f);
-    std::string roomLeftString = roomLeft ? "true" : "false";
+    auto roomLeft = jetOne.addFluid(0.0f, 20, 10.0f);
+    auto roomLeftString = roomLeft ? "true" : "false";
     std::cout << "Room for fuel: " << roomLeftString << std::endl;
 
-    bool stillFlying = delta306.checkFlightStatus(13);
-    std::string stillFlyingString = stillFlying ? "true" : "false";
+    auto stillFlying = delta306.checkFlightStatus(13);
+    auto stillFlyingString = stillFlying ? "true" : "false";
     std::cout << "We okay up there? " << stillFlyingString << std::endl;
 
     std::cout << "good to go!" << std::endl;
