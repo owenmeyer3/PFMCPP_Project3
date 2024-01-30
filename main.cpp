@@ -48,7 +48,7 @@ struct Foo
         while( bar.num < threshold )         //2a) 
         { 
             ++bar.num;                    //2a), 5)
-            std::cout << "  increasing bar.num: " << bar.num << std::endl; //4)
+            std::cout << "increasing bar.num: " << bar.num << std::endl; //4)
             if( bar.num >= threshold )       //2b)
                 return bar;
         }
@@ -89,6 +89,7 @@ struct Iphone
     void browseTheWeb(std::string url);
     void playMusic(std::string songName);
     void makePhoneCall(int number);
+    void screenShrinker(int magnitude);
 };
 
 Iphone::Iphone():
@@ -117,6 +118,15 @@ void Iphone::makePhoneCall(int number)
     number += 1;
 }
 
+void Iphone::screenShrinker(int magnitude)
+{
+    int i = magnitude % 10;
+    while(i < 10)
+    {
+        screenSize -= 0.1f;
+    }
+}
+
 
 struct Diner
 {
@@ -141,11 +151,13 @@ struct Diner
         void runFoodDisposal();
         void burnToast(int numberOfSlices);
         std::string receiveOrder();
+        float addBodyHeat();
     };
 
     void cookEggs(Kitchen thiskitchen);
     void serveFood(int tableNumber);
     std::string takeOrders(); 
+    void loseRating(int numberOfSpills);
     
     Kitchen kitchen;
 };
@@ -187,6 +199,20 @@ std::string Diner::Kitchen::receiveOrder(){
     return "Roger that!";
 }
 
+float Diner::Kitchen::addBodyHeat(){
+
+    float changedTemperature = temperature;
+    
+    for(int c = 0; c < numberOfChefs; ++c)
+    {
+        changedTemperature += 0.1f;
+    }
+
+    std::cout << "It's " << changedTemperature << " degrees in here!" << std::endl;
+    
+    return changedTemperature;
+}
+
 void Diner::cookEggs(Kitchen thiskitchen)
 {
     numberOfTables = numberOfEmployees + thiskitchen.numberOfChefs;
@@ -198,10 +224,17 @@ void Diner::serveFood(int tableNumber)
     tableNumber += 1;
 }
 
-
 std::string Diner::takeOrders()
 {
     return hoursOfOperation + " " + foodSupplier;
+}
+
+void Diner::loseRating(int numberOfSpills)
+{
+    for(int spill = 0; spill < numberOfSpills; ++spill)
+    {
+        starRating -= 1;
+    }
 }
 
 struct GuitarAmp
@@ -217,6 +250,7 @@ struct GuitarAmp
     void changeVolume(float newVolume);
     void processInput();
     void adjustGain(float newGain);
+    bool checkIfNeighborsAngry(float patience);
 };
 
 GuitarAmp::GuitarAmp():
@@ -243,6 +277,24 @@ void GuitarAmp::adjustGain(float newGain)
     gainControl = newGain;
 }
 
+bool GuitarAmp::checkIfNeighborsAngry(float patience)
+{
+    while(volumeControl < 100.0f)
+    {
+        if(volumeControl < patience)
+        {
+            std::cout << "Seems okay" << std::endl;
+        }
+        else
+        {
+            std::cout << "Oh boy. Everyone hide!" << std::endl;
+            return false;
+        }
+    }
+
+    return false;
+}
+
 struct Bank
 {
     Bank();
@@ -256,6 +308,7 @@ struct Bank
     int receiveCash(float amount);
     void payTeller(float amount);
     void hireManager(std::string name);
+    float robbery(std::string robberType);
 };
 
 Bank::Bank():
@@ -283,6 +336,29 @@ void Bank::hireManager(std::string name)
     numberOfTellers += numberOfAtms;
 }
 
+float Bank::robbery(std::string robberType)
+{
+    int strength;
+    float moneyStolen = 0.0f;
+    
+    if(robberType == "buff guy")
+    {
+        strength = 2;
+        std::cout << "Stick 'em up!" << std::endl;
+    }else
+    {
+        strength = 1;
+        std::cout << "Money please" << std::endl;
+    }
+
+    for(int i = 0; i < strength; ++i)
+    {
+        moneyStolen += 300.0f;
+    }
+
+    return moneyStolen;
+}
+
 struct Wing
 {
     Wing();
@@ -296,6 +372,7 @@ struct Wing
     void inclineFlap();
     void meltIce();
     void flashLight(std::string otherColor);
+    void breakRib();
 };
 
 Wing::Wing():
@@ -322,6 +399,15 @@ void Wing::flashLight(std::string otherColor)
     length = 21.0f;
 }
 
+void Wing::breakRib()
+{
+    while(numberOfRibs > 0)
+    {
+        --numberOfRibs;
+        std::cout << "Broke 1 rib" << std::endl;
+    }
+}
+
 struct Cockpit
 {
     Cockpit();
@@ -335,6 +421,7 @@ struct Cockpit
     void turnPlane();
     bool sendMessageToAirport(std::string message); 
     void sendPaMessageToCabin(std::string message);
+    void removeFamily(int numberOfFamilyMembers, std::string parentsAttitude);
 };
 
 Cockpit::Cockpit():
@@ -361,6 +448,23 @@ void Cockpit::sendPaMessageToCabin(std::string message)
     std::cout << "Hey guys don't be mad but " << message << ". Also, " << radarType << std::endl;
 }
 
+void Cockpit::removeFamily(int numberOfFamilyMembers, std::string parentsAttitude)
+{
+    while(numberOfFamilyMembers > 0)
+    {
+        if(parentsAttitude == "reasonable")
+        {
+            std::cout << "No problem, please sit down" << std::endl;
+            return;
+        }
+        else
+        {
+            std::cout << "Off you go" << std::endl;
+            -- numberOfFamilyMembers;
+        }
+    }
+}
+
 struct Cabin
 {
     Cabin();
@@ -384,11 +488,13 @@ struct Cabin
         void dance(float insanityLevel);
         float bendKnee();
         void speak();
+        float pourCoffee(float coffeeLevel, int numberOfOrders);
     };
     
     void dimLights(float newLevel);
     float serveCoffee(FlightAttendant flightAttendant);
     void playMusic();
+    float reclineSeat(float maxReclineAngle, bool rearPassengerIsHappy);
     
     FlightAttendant joseph;
     FlightAttendant nadine;
@@ -425,6 +531,24 @@ void Cabin::FlightAttendant::speak()
     std::cout << deoderantBrand << " " << favoriteDanceType << std::endl;
 }
 
+float Cabin::FlightAttendant::pourCoffee(float coffeeLevel, int numberOfOrders)
+{
+    for(int order = 0; order < numberOfOrders; ++order)
+    {
+        if(coffeeLevel > 0.5f)
+        {
+            std::cout << "Pour cup" << std::endl;
+            coffeeLevel -= 0.5f;  
+        }
+        else
+        {
+            std::cout << "No more coffee" << std::endl;
+            return 0.0f;
+        }
+    }
+    return coffeeLevel;
+}
+
 void Cabin::dimLights(float newLevel)
 {
     newLevel += legroomDepth;
@@ -446,6 +570,31 @@ void Cabin::playMusic()
     }
 }
 
+float Cabin::reclineSeat(float maxReclineAngle, bool rearPassengerIsHappy)
+{
+    float angle = 0.0f;
+    
+    while(angle < maxReclineAngle)
+    {
+        if(angle > 30.0f)
+        {
+            rearPassengerIsHappy = false;
+        }
+        
+        if(rearPassengerIsHappy)
+        {
+            std::cout << "Recline seat" << std::endl;
+            angle += 5.0f;
+        }
+        else
+        {
+            std::cout << "No recline" << std::endl;
+            return angle;
+        }
+    }
+    return angle;
+}
+
 struct Restroom
 {
     Restroom();
@@ -459,6 +608,7 @@ struct Restroom
     void flowSinkWater();
     void illuminateRoom(float newLevel);
     float moveLoadToTank();
+    bool callMaintenence(float toiletLevel, int numberOfVisitors);
 };
 
 Restroom::Restroom():
@@ -485,6 +635,27 @@ float Restroom::moveLoadToTank()
     return flushVolumeInDecibels;
 }
 
+bool Restroom::callMaintenence(float toiletLevel, int numberOfVisitors)
+{
+    float maxToiletLevel = 100.0f;
+    
+    for(int visitor = 0; visitor < numberOfVisitors; ++visitor)
+    {
+        if(toiletLevel < maxToiletLevel)
+        {
+            std::cout << "Next!" << std::endl;
+            toiletLevel += 10.0f;
+        }
+        else
+        {
+        std::cout << "Uh oh!" << std::endl;
+        return false;
+        }
+    }
+    
+    return true;
+}
+
 struct Engine
 {
     Engine();
@@ -498,6 +669,7 @@ struct Engine
     void suckInFuel();
     void combustFuel();
     float spinAxle();
+    bool addFluid(float initialFluidLevel, int bottlesOfFuel, float fluidPerBottle);
 };
 
 Engine::Engine():
@@ -522,6 +694,26 @@ float Engine::spinAxle()
     return chamberPressure * maximumTemperature;
 }
 
+bool Engine::addFluid(float initialFluidLevel, int bottlesOfFuel, float fluidPerBottle)
+{
+    float level = initialFluidLevel;
+    
+    for(int bottle = 0; bottle < bottlesOfFuel; ++bottle)
+    {
+        if(level < 100.0f)
+        {
+            std::cout << "1 bottle poured" << std::endl;
+            level += fluidPerBottle;
+        }
+        else
+        {
+            std::cout << "Too much!" << std::endl;
+            return false;
+        }
+    }
+    return true;
+}
+
 struct Airplane
 {
     Airplane();
@@ -535,6 +727,7 @@ struct Airplane
     void takeoff();
     void turn(float angle);
     float pingRadar();
+    bool checkFlightStatus(int numberOfBirdsHit);
 };
 
 Airplane::Airplane()
@@ -558,6 +751,23 @@ void Airplane::turn(float angle)
 float Airplane::pingRadar()
 {
     return restroom.moveLoadToTank();
+}
+
+bool Airplane::checkFlightStatus(int numberOfBirdsHit)
+{
+    int bird = 0;
+    while(bird < numberOfBirdsHit)
+    {
+        wing.length -= 1.0f;
+        std::cout << "Thump" << std::endl;
+
+        if (wing.length < 15.0f)
+        {
+            std::cout << "Down we go" << std::endl;
+            return false;
+        }
+    }
+    return true;
 }
 
 int main()
@@ -592,7 +802,7 @@ int main()
     jerrysKitchen.runFoodDisposal();
     jerrysKitchen.burnToast(1);
     std::string kitchenOrder = jerrysKitchen.receiveOrder();
-    std::cout << "Here's your " << kitchenOrder << std::endl;
+    std::cout << kitchenOrder << std::endl;
 
     jerrys.serveFood(12);
     jerrys.cookEggs(jerrysKitchen);
@@ -635,17 +845,17 @@ int main()
     passengersClub.dimLights(11.0f);
     float legroom = passengersClub.serveCoffee(jessica);
     passengersClub.playMusic();
-    std::cout << "Here's your " << std::to_string(legroom) << std::endl;
+    std::cout << "Legroom: " << std::to_string(legroom) << std::endl;
 
     ladiesRoom.flowSinkWater();
     ladiesRoom.illuminateRoom(5.0f);
     float flushVolumeInDecibels = ladiesRoom.moveLoadToTank();
-    std::cout << "Here's your " << std::to_string(flushVolumeInDecibels) << std::endl;
+    std::cout << "This loud: " << std::to_string(flushVolumeInDecibels) << std::endl;
 
     jetOne.suckInFuel();
     jetOne.combustFuel();
     float maxVolume = jetOne.spinAxle();
-    std::cout << "Here's your " << std::to_string(maxVolume) << std::endl;
+    std::cout << "This loud: " << std::to_string(maxVolume) << std::endl;
 
     jetTwo.suckInFuel();
     jetTwo.combustFuel();
@@ -654,7 +864,43 @@ int main()
     delta306.takeoff();
     delta306.turn(90.1f);
     float flushSpinDirection = delta306.pingRadar();
-    std::cout << "Here's your " << std::to_string(flushSpinDirection) << std::endl;
+    std::cout << "Spin this way: " << std::to_string(flushSpinDirection) << std::endl;
+
+    myPhone.screenShrinker(15);
+
+    float temp = jerrysKitchen.addBodyHeat();
+    std::cout << "New temp: " << std::to_string(temp) << std::endl;
+
+    jerrys.loseRating(5);
+
+    bool neighborIsAngry = thisOldAmp.checkIfNeighborsAngry(70.0f);
+    std::string neighborIsAngryString = neighborIsAngry ? "true" : "false";
+    std::cout << "Are you angry? " << neighborIsAngryString << std::endl;
+
+    float moneyStolen = chase.robbery("buff guy");
+    std::cout << "$" << std::to_string(moneyStolen) << " lost" << std::endl;
+
+    leftWing.breakRib();
+
+    pilotsPad.removeFamily(5, "reasonable");
+
+    float coffeeLevel = jessica.pourCoffee(5.0f, 25);
+    std::cout << "coffeeleft: " << std::to_string(coffeeLevel) << std::endl;
+    
+    float angle = passengersClub.reclineSeat(40.0f, true);
+    std::cout << "This far back: " << std::to_string(angle) << std::endl;
+
+    bool ladiesRoomStatus = ladiesRoom.callMaintenence(15.0f, 10);
+    std::string ladiesRoomStatusString = ladiesRoomStatus ? "true" : "false";
+    std::cout << "Bathroom status: " << ladiesRoomStatusString << std::endl;
+
+    bool roomLeft = jetOne.addFluid(0.0f, 20, 10.0f);
+    std::string roomLeftString = roomLeft ? "true" : "false";
+    std::cout << "Room for fuel: " << roomLeftString << std::endl;
+
+    bool stillFlying = delta306.checkFlightStatus(13);
+    std::string stillFlyingString = stillFlying ? "true" : "false";
+    std::cout << "We okay up there? " << stillFlyingString << std::endl;
 
     std::cout << "good to go!" << std::endl;
 }
