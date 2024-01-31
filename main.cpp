@@ -124,6 +124,7 @@ void Iphone::screenShrinker(int magnitude)
     while(i < 10)
     {
         screenSize -= 0.1f;
+        ++i;
     }
 }
 
@@ -284,6 +285,7 @@ bool GuitarAmp::checkIfNeighborsAngry(float patience)
         if(volumeControl < patience)
         {
             std::cout << "Seems okay" << std::endl;
+            volumeControl += 5.0f;
         }
         else
         {
